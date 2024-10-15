@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var httpRequest;
+    function Calculate(){
+        httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = showResult;
+
+        var mango = document.getElementById("mango").value;
+        var orange = document.getElementById("orange").value;
+        var banana = document.getElementById("banana").value;
+
+        var url = "slice13.php?mango=" + mango + "&orange=" + orange + "&banana=" + banana;
+        httpRequest.open("GET",url);
+        httpRequest.send();
+    }
+
+    function showResult(){
+        if(httpRequest.readyState == 4 && httpRequest.status == 200){
+            document.getElementById("result").innerHTML = httpRequest.responseText;
+        }
+    }
+</script>
+<body>
+    <h1>บันทึกการขาย</h1>
+    <form action="">
+        <label for="">มะม่วง กก. ละ 30 บาท ขายได้ </label><input type="number" name="" id="mango" onkeyup="Calculate()"> กก. <br>
+        <label for="">ส้ม กก. ละ 70 บาท ขายได้ </label><input type="number" name="" id="orange" onkeyup="Calculate()"> กก. <br>
+        <label for="">กล้วย หวี ละ 30 บาท ขายได้ </label><input type="number" name="" id="banana" onkeyup="Calculate()"> หวี <br>
+        <span id="result"></span>
+    </form>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab7 Part C NoSQL</title>
+    <link rel="stylesheet" href="student.css">
+    <script>
+        function Query(){
+            var table = document.getElementById("TableQuery");
+            var JSONdata = "./student.json";
+
+            var course_selected = document.getElementById("course_selector").value;
+
+            var caption = document.getElementById("Caption");
+            caption.innerHTML = `Students in ${course_selected}`;
+            table.innerHTML="";
+            table.appendChild(caption);
+
+            var header = ["std_id","std_name"];
+            var row = document.createElement("tr");
+            for (let i in header){
+                let theader = document.createElement("th");
+                theader.innerHTML = header[i];
+                row.appendChild(theader);
+            }
+            table.appendChild(row);
+
+            // console.log(course_selected);
+            fetch(JSONdata)
+            .then(res => res.json())
+            .then(function(data){
+                // console.log(data);
+                var student = data.student;
+                // console.log(student);
+                var CourseID = null;
+                for(let i = 0 ; i < data.course.length ; i++)
+                {
+                    if(course_selected == data.course[i].title)
+                    {
+                        CourseID = data.course[i].course_id;
+                        break;
+                    }
+                }
+                // console.log(CourseID);
+                
+                var std = data.student;
+                var Register = data.register;
+                // console.log(Register.length);
+                for(let i = 0 ; i < Register.length ; i++)
+                {
+                    if(Register[i].course_id == CourseID)
+                    {
+                        var row = document.createElement("tr")
+                        var std_enroll = Register[i].std_id;
+                        for(let l = 0 ; l < std.length ; l++)
+                        {
+                            // console.log(std_enroll + " == " + std[l].std_id + " is " + (std_enroll == std[l].std_id));
+                            if(std_enroll == std[l].std_id)
+                            {
+                                // console.log(std[l].std_ID);
+                                for(let m in header){
+                                    let std_data = document.createElement("td");
+                                    // console.log(std[l][header[m]]);
+                                    std_data.innerHTML = std[l][header[m]];
+                                    row.appendChild(std_data);
+                                }
+                                table.appendChild(row);
+                                break;
+                            }
+                        }
+                    }
+                }
+            })          
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <label for="">Course Select</label><br>
+        <select name="" id="course_selector" class="SetMinWidth">
+            <option value="WEB APPLICATION PROGRAMMING">WEB APPLICATION PROGRAMMING</option>
+            <option value="WEB TECHNOLOGY">WEB TECHNOLOGY</option>
+            <option value="SYSTEMS ANALYSIS AND DESIGN">SYSTEMS ANALYSIS AND DESIGN</option>
+            <option value="DIGITAL LOGIC AND COMPUTER INTERFACING">DIGITAL LOGIC AND COMPUTER INTERFACING</option>
+            <option value="STRUCTURED PROGRAMMING">STRUCTURED PROGRAMMING</option>
+            <option value="SOFTWARE DEVELOPMENT AND PROJECT MANAGEMENT">SOFTWARE DEVELOPMENT AND PROJECT MANAGEMENT</option>
+        </select><br>
+        <button type="button" onclick="Query()" class="SetMinWidth">Confirm</button>
+    </form>
+    <table id="TableQuery">
+        <caption id="Caption"></caption>
+    </table>
+</body>
+</html>

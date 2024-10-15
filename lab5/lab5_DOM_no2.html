@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab5 no2</title>
+    <script>
+        function changeColor(id)
+        {
+            var inputTag = document.getElementById(id);
+            inputTag.style.color = 'Green';
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <label for="">Name:</label>
+        <input type="text" id="Name" onchange="changeColor(id)"><br>
+        <label for="">Age:</label>
+        <input type="number" id="Age" onchange="changeColor(id)"><br>
+        <label for="">Birthdate:</label>
+        <input type="text" id="Birthdate" onchange="changeColor(id)"><br>  
+    </form>
+</body>
+</html>

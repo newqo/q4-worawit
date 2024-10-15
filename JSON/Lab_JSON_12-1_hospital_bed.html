@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    async function getDataFromAPI() {
+        let response = await fetch('priv_hos.json');
+        let rawData = await response.text();
+        let objectData = JSON.parse(rawData);
+        let result_large = document.getElementById("result_large");
+        let result_medium = document.getElementById("result_medium");
+        let result_small = document.getElementById("result_small");
+
+        for(let i = 0 ; i < objectData.features.length; i++){
+            let num_bed = objectData.features[i].properties.num_bed;
+            let content = "ชื่อโรงพยาบาล : " + objectData.features[i].properties.name + " (" + num_bed +" เตียง)"
+            
+            let li = document.createElement("li");
+            li.innerHTML = content;
+            if(num_bed >= 91)
+            {
+                result_large.appendChild(li);
+            }else if (num_bed <= 90 && num_bed > 30){
+                result_medium.appendChild(li);
+            }else{
+                result_small.appendChild(li);
+            }
+        }
+    }
+    getDataFromAPI()
+</script>
+<body>
+    <h1>โรงพยาบาลเอกชน ในกทม.</h1>
+    <h2>โรงพยาบาลขนาดใหญ่ </h2>
+    <ol id="result_large" type="1"></ol>
+    <h2>โรงพยาบาลขนาดกลาง</h2>
+    <ol id="result_medium" type="1"></ol>
+    <h2>โรงพยาบาลขนาดเล็ก</h2>
+    <ol id="result_small" type="1"></ol>
+</body>
+</html>

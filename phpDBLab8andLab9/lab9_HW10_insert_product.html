@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab9 HW11</title>
+</head>
+<body>
+    <form action="lab9_HW10_insert_product.php" method="post" enctype="multipart/form-data">
+        <label for="">ชื่อสินค้า</label><br>
+        <input type="text" name="pname" required><br>
+        <label for="">รายละเอียดสินค้า</label><br>
+        <textarea name="pdetail" rows="3" cols="40" required></textarea><br>
+        <label for="">ราคาสินค้า</label><br>
+        <input type="number" name="price" required><br>
+        <label for="">รูปภาพสินค้า</label><br>
+        <input type="file" accept=".jpg" name="image_upload" required><br>
+        <button type="submit" name="submit">เพิ่มสินค้า</button>
+    </form>
+</body>
+</html>

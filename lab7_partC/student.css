@@ -1,0 +1,31 @@
+label {
+    font-weight: bold;
+}
+
+form {
+    margin: 3%;
+}
+
+table,th,td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+th,td {
+    width: 50vh;
+}
+
+table {
+    margin-left: 3%;
+}
+
+caption {
+    font-weight: bold;
+    font-size: medium;
+    text-align: left;
+    margin-bottom: 2%;
+}
+
+.SetMinWidth {
+    min-width: 100px;
+}

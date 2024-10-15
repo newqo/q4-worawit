@@ -1,0 +1,123 @@
+{
+    "course" : [
+        {
+            "course_id" : "322236",
+            "title" : "WEB APPLICATION PROGRAMMING",
+            "credit" : 3
+        },
+        {
+            "course_id" : "322431",
+            "title" : "WEB TECHNOLOGY",
+            "credit" : 3
+        },
+        {
+            "course_id" : "322372",
+            "title" : "SYSTEMS ANALYSIS AND DESIGN",
+            "credit" : 3
+        },
+        {
+            "course_id" : "322224",
+            "title" : "DIGITAL LOGIC AND COMPUTER INTERFACING",
+            "credit" : 3
+        },
+        {
+            "course_id" : "322114",
+            "title" : "STRUCTURED PROGRAMMING",
+            "credit" : 3
+        },
+        {
+            "course_id" : "322473",
+            "title" : "SOFTWARE DEVELOPMENT AND PROJECT MANAGEMENT",
+            "credit" : 3
+        }
+
+    ],
+    "student" : [
+        {
+            "std_id" : "5001100348",
+            "std_name" : "นุชนารถ ขําทอง",
+            "province" : "ขอนแก่น"
+        },
+        {
+            "std_id" : "5001104807",
+            "std_name" : "มัณฑนา ทองอยู่",
+            "province" : "เลย"
+        },
+        {
+            "std_id" : "5001101634",
+            "std_name" : "จักรพงศ์ คนล่ํ่ำ",
+            "province" : "กรุงเทพฯ"
+        },
+        {
+            "std_id" : "5001101811",
+            "std_name" : "นัยนา คําภู",
+            "province" : "ขอนแก่น"
+        },
+        {
+            "std_id" : "5001102962",
+            "std_name" : "พรเทพ ชัยราชย์",
+            "province" : "อุดรธานี"
+        },
+        {
+            "std_id" : "5001120060",
+            "std_name" : "มงคล บัวขาว",
+            "province" : "อุบลราชธานี"
+        },
+        {
+            "std_id" : "5001130201",
+            "std_name" : "ชํานาญ  สุ่มนุช",
+            "province" : "นครราชสีมา"
+        }
+    ],
+
+    "register" : [
+        {
+            "std_id" : "5001100348",
+            "course_id" : "322236"
+        },
+        {
+            "std_id" : "5001100348",
+            "course_id" : "322114"
+        },
+        {
+            "std_id" : "5001100348",
+            "course_id" : "322224"
+        },
+        {
+            "std_id" : "5001104807",
+            "course_id" : "322236"
+        },
+        {
+            "std_id" : "5001104807",
+            "course_id" : "322431"
+        },
+        {
+            "std_id" : "5001101634",
+            "course_id" : "322236"
+        },
+        {
+            "std_id" : "5001101634",
+            "course_id" : "322431"
+        },
+        {
+            "std_id" : "5001101811",
+            "course_id" : "322236"
+        },
+        {
+            "std_id" : "5001101811",
+            "course_id" : "322224"
+        },
+        {
+            "std_id" : "5001101811",
+            "course_id" : "322114"
+        },
+        {
+            "std_id" : "5001120060",
+            "course_id" : "322372"
+        },
+        {
+            "std_id" : "5001120060",
+            "course_id" : "322114"
+        }
+    ]
+}
